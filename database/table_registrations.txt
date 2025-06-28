@@ -1,0 +1,20 @@
+CREATE TABLE registrations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(500),
+    last_name VARCHAR(500),
+    email VARCHAR(150),
+    contact_number VARCHAR(15),
+    gender ENUM('Male', 'Female', 'Prefer not to say', 'Other'),
+    dob DATE,
+    address TEXT,
+    country VARCHAR(100),
+    state VARCHAR(100),
+    city VARCHAR(100),
+    pincode VARCHAR(10),
+    tshirt_size ENUM('XS', 'S', 'M', 'L', 'XL', 'XXL', 'Other'),
+    blood_group ENUM('A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'),
+    emergency_contact_name VARCHAR(500),
+    emergency_contact_number VARCHAR(15),
+    race_category ENUM('2 kms', '5 kms', '10 kms', '21 kms'),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
