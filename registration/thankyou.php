@@ -1,3 +1,7 @@
+<?php
+  $full_name = isset($_GET['name']) ? htmlspecialchars($_GET['name']) : 'Participant';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +16,9 @@
 <body class="bg-light">
     <div class="container text-center mt-5">
     <h1 class="text-success">🎉 Thank You for Registering!</h1>
+    <p class="lead mt-3">
+      Thank you <code class="bg-light px-2 py-1 border rounded"><?= $full_name ?></code> 
+    </p>
     <p class="lead mt-3">
       We're excited to have you participate in the <strong>Marathon on 3rd August 2025</strong>!
     </p>

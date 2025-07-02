@@ -27,7 +27,8 @@
         );
 
         if ($stmt->execute()) {
-            header("Location: thankyou.php");
+            $full_name = urlencode($_POST['first_name'] . ' ' . $_POST['last_name']);
+            header("Location: thankyou.php?name=$full_name");
             exit;
         } else {
             echo "<div class='alert alert-danger'>Error: " . $stmt->error . "</div>";
