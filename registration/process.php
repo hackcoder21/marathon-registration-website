@@ -1,4 +1,10 @@
 <?php
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+
+    require '../includes/PHPMailer/PHPMailer.php';
+    require '../includes/PHPMailer/SMTP.php';
+    require '../includes/PHPMailer/Exception.php';
     include '../includes/db.php';
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -27,6 +33,39 @@
         );
 
         if ($stmt->execute()) {
+            $mail = new PHPMailer(true);
+
+            try {
+                // SMTP Configuration
+                $mail->isSMTP();
+                $mail->Host       = 'smtp.gmail.com'; // or your SMTP host
+                $mail->SMTPAuth   = true;
+                $mail->Username   = 'hackcoder21@gmail.com'; // replace with your Gmail
+                $mail->Password   = 'kfyw jvev bahc qbyg';    // use App Password (not Gmail password)
+                $mail->SMTPSecure = 'tls';
+                $mail->Port       = 587;
+
+                // Sender and recipient
+                $mail->setFrom('hackcoder21@gmail.com', 'Marathon Team');
+                $mail->addAddress($_POST['email'], $_POST['first_name'] . ' ' . $_POST['last_name']);
+
+                // Email content
+                $mail->isHTML(true);
+                $mail->Subject = 'Thank You for Registering!';
+                $mail->Body    = "
+                    <h3>Hi {$_POST['first_name']} {$_POST['last_name']},</h3>
+                    <p>Thank you for registering for the <strong>Marathon on 3rd August 2025</strong>!</p>
+                    <p>We’ve received your registration and will send you more information soon.</p>
+                    <p>Get ready to run! 🏃‍♂️🏃‍♀️</p>
+                    <br><p>– Marathon Team</p>
+                ";
+
+                $mail->send();
+                // echo "Email sent successfully.";
+            } catch (Exception $e) {
+                // echo "Email could not be sent. Error: {$mail->ErrorInfo}";
+            }
+
             $full_name = urlencode($_POST['first_name'] . ' ' . $_POST['last_name']);
             header("Location: thankyou.php?name=$full_name");
             exit;
