@@ -1,5 +1,18 @@
 <?php
-  $full_name = isset($_GET['name']) ? htmlspecialchars($_GET['name']) : 'Participant';
+  session_start();
+  header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+  header("Cache-Control: post-check=0, pre-check=0", false);
+  header("Pragma: no-cache");
+
+  if (!isset($_SESSION['form_submitted']) || $_SESSION['form_submitted'] !== true) {
+      header("Location: ../register.php");
+      exit;
+  }
+
+  $name = isset($_SESSION['user_name']) ? htmlspecialchars($_SESSION['user_name']) : 'Participant';
+
+  unset($_SESSION['form_submitted']);
+  unset($_SESSION['user_name']);
 ?>
 
 <!DOCTYPE html>
@@ -14,10 +27,10 @@
     />
 </head>
 <body class="bg-light">
-    <div class="container text-center mt-5">
+  <div class="container text-center mt-5">
     <h1 class="text-success">🎉 Thank You for Registering!</h1>
     <p class="lead mt-3">
-      Thank you <code class="bg-light px-2 py-1 border rounded"><?= $full_name ?></code> 
+      Thank you <code class="bg-light px-2 py-1 border rounded"><?= $name ?></code> 
     </p>
     <p class="lead mt-3">
       We're excited to have you participate in the <strong>Marathon on 3rd August 2025</strong>!
@@ -30,5 +43,13 @@
     </p>
     <a href="../index.html" class="btn btn-primary mt-4">Go Back to Home</a>
   </div>
+
+  <script>
+    // Prevent user from going back to form
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+      history.go(1);
+    };
+  </script>
 </body>
 </html>

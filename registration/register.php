@@ -1,3 +1,13 @@
+<?php
+  session_start();
+  
+  if (isset($_SESSION['form_submitted']) && $_SESSION['form_submitted'] === true) {
+      unset($_SESSION['form_submitted']);
+      header("Location: thankyou.php");
+      exit();
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
 
@@ -66,8 +68,9 @@
                 // echo "Email could not be sent. Error: {$mail->ErrorInfo}";
             }
 
-            $full_name = urlencode($_POST['first_name'] . ' ' . $_POST['last_name']);
-            header("Location: thankyou.php?name=$full_name");
+            $_SESSION['form_submitted'] = true; 
+            $_SESSION['user_name'] = $_POST['first_name'] . ' ' . $_POST['last_name'];
+            header("Location: thankyou.php");
             exit;
         } else {
             echo "<div class='alert alert-danger'>Error: " . $stmt->error . "</div>";
