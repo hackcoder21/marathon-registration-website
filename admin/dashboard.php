@@ -26,8 +26,19 @@
 </head>
 <body>
   <div class="container-fluid mt-5">
-    <h2 class="mb-4">Registered Participants</h2>
-    <a href="logout.php" class="btn btn-danger mb-3">Logout</a>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="mb-0">Registered Participants</h2>
+
+      <div class="dropdown">
+        <button class="btn border-0 bg-transparent dropdown-toggle" type="button" id="adminMenu" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="../assets/images/admin.png" alt="Admin" width="40" height="40" class="rounded-circle">
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="adminMenu">
+          <li><a class="dropdown-item" href="exportcsv.php">Export</a></li>
+          <li><a class="dropdown-item text-danger" href="logout.php">Logout</a></li>
+        </ul>
+      </div>
+    </div>
 
     <div class="table-responsive">
       <table class="table table-bordered table-striped">
@@ -100,5 +111,6 @@
       </nav>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
