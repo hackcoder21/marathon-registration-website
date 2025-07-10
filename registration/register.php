@@ -18,138 +18,151 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
-  <body class="bg-light">
-    <div class="container mt-5">
-      <h2 class="text-center mb-4">Marathon Registration Form</h2>
-      <form action="process.php" method="POST">
-        <div class="row">
-          <div class="col-md-6">
-            <input
-              type="text"
-              name="first_name"
-              class="form-control mb-2"
-              placeholder="First Name"
-              required
-            />
-            <input
-              type="text"
-              name="last_name"
-              class="form-control mb-2"
-              placeholder="Last Name"
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              class="form-control mb-2"
-              placeholder="Email"
-              required
-            />
-            <input
-              type="tel"
-              name="contact_number"
-              class="form-control mb-2"
-              placeholder="Contact Number"
-              required
-            />
-            <select name="gender" class="form-control mb-2" required>
-              <option value="">Gender</option>
-              <option>Male</option>
-              <option>Female</option>
-              <option>Prefer not to say</option>
-              <option>Other</option>
-            </select>
-            <input
-              type="date"
-              name="dob"
-              class="form-control mb-2"
-              placeholder="Date of Birth"
-              required
-            />
-            <textarea
-              name="address"
-              class="form-control mb-2"
-              placeholder="Address"
-              required
-            ></textarea>
+  <body>
+    <!-- Navbar -->
+    <?php include '../includes/navbar.php'; ?>
+
+    <main>
+      <div class="container mt-5">
+        <h2 class="text-center mb-4">Marathon Registration Form</h2>
+        <form action="process.php" method="POST">
+          <div class="row">
+            <div class="col-md-6">
+              <input
+                type="text"
+                name="first_name"
+                class="form-control mb-2"
+                placeholder="First Name"
+                required
+              />
+              <input
+                type="text"
+                name="last_name"
+                class="form-control mb-2"
+                placeholder="Last Name"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                class="form-control mb-2"
+                placeholder="Email"
+                required
+              />
+              <input
+                type="tel"
+                name="contact_number"
+                class="form-control mb-2"
+                placeholder="Contact Number"
+                required
+              />
+              <select name="gender" class="form-control mb-2" required>
+                <option value="">Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Prefer not to say</option>
+                <option>Other</option>
+              </select>
+              <input
+                type="date"
+                name="dob"
+                class="form-control mb-2"
+                placeholder="Date of Birth"
+                required
+              />
+              <textarea
+                name="address"
+                class="form-control mb-2"
+                placeholder="Address"
+                required
+              ></textarea>
+            </div>
+            <div class="col-md-6">
+              <input
+                type="text"
+                name="country"
+                class="form-control mb-2"
+                placeholder="Country"
+                required
+              />
+              <input
+                type="text"
+                name="state"
+                class="form-control mb-2"
+                placeholder="State"
+                required
+              />
+              <input
+                type="text"
+                name="city"
+                class="form-control mb-2"
+                placeholder="City"
+                required
+              />
+              <input
+                type="text"
+                name="pincode"
+                class="form-control mb-2"
+                placeholder="Pincode"
+                required
+              />
+              <select name="tshirt_size" class="form-control mb-2" required>
+                <option value="">T-Shirt Size</option>
+                <option>XS</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>XXL</option>
+                <option>Other</option>
+              </select>
+              <select name="blood_group" class="form-control mb-2" required>
+                <option value="">Blood Group</option>
+                <option>A+</option>
+                <option>A-</option>
+                <option>B+</option>
+                <option>B-</option>
+                <option>AB+</option>
+                <option>AB-</option>
+                <option>O+</option>
+                <option>O-</option>
+              </select>
+              <input
+                type="text"
+                name="emergency_contact_name"
+                class="form-control mb-2"
+                placeholder="Emergency Contact Name"
+                required
+              />
+              <input
+                type="text"
+                name="emergency_contact_number"
+                class="form-control mb-2"
+                placeholder="Emergency Contact Number"
+                required
+              />
+              <select name="race_category" class="form-control mb-2" required>
+                <option value="">Select Race Category</option>
+                <option>2 kms</option>
+                <option>5 kms</option>
+                <option>10 kms</option>
+                <option>21 kms</option>
+              </select>
+            </div>
           </div>
-          <div class="col-md-6">
-            <input
-              type="text"
-              name="country"
-              class="form-control mb-2"
-              placeholder="Country"
-              required
-            />
-            <input
-              type="text"
-              name="state"
-              class="form-control mb-2"
-              placeholder="State"
-              required
-            />
-            <input
-              type="text"
-              name="city"
-              class="form-control mb-2"
-              placeholder="City"
-              required
-            />
-            <input
-              type="text"
-              name="pincode"
-              class="form-control mb-2"
-              placeholder="Pincode"
-              required
-            />
-            <select name="tshirt_size" class="form-control mb-2" required>
-              <option value="">T-Shirt Size</option>
-              <option>XS</option>
-              <option>S</option>
-              <option>M</option>
-              <option>L</option>
-              <option>XL</option>
-              <option>XXL</option>
-              <option>Other</option>
-            </select>
-            <select name="blood_group" class="form-control mb-2" required>
-              <option value="">Blood Group</option>
-              <option>A+</option>
-              <option>A-</option>
-              <option>B+</option>
-              <option>B-</option>
-              <option>AB+</option>
-              <option>AB-</option>
-              <option>O+</option>
-              <option>O-</option>
-            </select>
-            <input
-              type="text"
-              name="emergency_contact_name"
-              class="form-control mb-2"
-              placeholder="Emergency Contact Name"
-              required
-            />
-            <input
-              type="text"
-              name="emergency_contact_number"
-              class="form-control mb-2"
-              placeholder="Emergency Contact Number"
-              required
-            />
-            <select name="race_category" class="form-control mb-2" required>
-              <option value="">Select Race Category</option>
-              <option>2 kms</option>
-              <option>5 kms</option>
-              <option>10 kms</option>
-              <option>21 kms</option>
-            </select>
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary mt-3">Register</button>
-      </form>
-      <div id="result" class="mt-3"></div>
-    </div>
+          <button type="submit" class="btn btn-primary mt-3">Register</button>
+        </form>
+        <div id="result" class="mt-3"></div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <?php include '../includes/footer.php'; ?>
   </body>
 </html>

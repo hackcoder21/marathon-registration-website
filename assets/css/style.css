@@ -1,0 +1,22 @@
+/* assets/css/style.css */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa; /* Bootstrap light bg */
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px; /* Space for fixed navbar */
+}

@@ -1,0 +1,5 @@
+RewriteEngine On
+
+# Redirect to index.php if just base URL is accessed
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+?\s
+RewriteRule ^$ index.php [R=302,L]

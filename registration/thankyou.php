@@ -25,24 +25,37 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
-<body class="bg-light">
-  <div class="container text-center mt-5">
-    <h1 class="text-success">🎉 Thank You for Registering!</h1>
-    <p class="lead mt-3">
-      Thank you <code class="bg-light px-2 py-1 border rounded"><?= $name ?></code> 
-    </p>
-    <p class="lead mt-3">
-      We're excited to have you participate in the <strong>Marathon on 3rd August 2025</strong>!
-    </p>
-    <p>
-      You will receive a confirmation email with all the details shortly.
-    </p>
-    <p>
-      For any queries, feel free to contact us. Get ready to run! 🏃‍♂️🏃‍♀️
-    </p>
-    <a href="../index.html" class="btn btn-primary mt-4">Go Back to Home</a>
-  </div>
+<body>
+  <!-- Navbar -->
+  <?php include '../includes/navbar.php'; ?>
+
+  <main>
+    <div class="container text-center mt-5">
+      <h1 class="text-success">🎉 Thank You for Registering!</h1>
+      <p class="lead mt-3">
+        Thank you <code class="bg-light px-2 py-1 border rounded"><?= $name ?></code> 
+      </p>
+      <p class="lead mt-3">
+        We're excited to have you participate in the <strong>Marathon on 3rd August 2025</strong>!
+      </p>
+      <p>
+        You will receive a confirmation email with all the details shortly.
+      </p>
+      <p>
+        For any queries, feel free to contact us. Get ready to run! 🏃‍♂️🏃‍♀️
+      </p>
+      <a href="../index.html" class="btn btn-primary mt-4">Go Back to Home</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <?php include '../includes/footer.php'; ?>
 
   <script>
     // Prevent user from going back to form
