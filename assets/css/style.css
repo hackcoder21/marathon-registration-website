@@ -4,13 +4,18 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Prevent scrolling */
+  overflow: hidden; 
 }
 
 body {
   display: flex;
   flex-direction: column;
-  background-color: #f8f9fa; /* Bootstrap light bg */
+  background-color: #f8f9fa; 
+  background-image: 
+    linear-gradient(45deg, #e5b7b7 1px, transparent 1px),
+    linear-gradient(-45deg, #8d5050 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-repeat: repeat;
 }
 
 main {
@@ -18,5 +23,32 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 60px; /* Space for fixed navbar */
+}
+
+main-register {
+  flex: 1;
+  overflow-y: auto;  
+  margin-top: 80px; 
+  margin-bottom: 140px;         
+}
+
+main-thankyou {
+  flex: 1;
+  overflow-y: auto;  
+  margin-top: 80px; 
+  margin-bottom: 140px;         
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1030;
 }

@@ -21,10 +21,10 @@
         <h1 class="mb-4">Welcome to Marathon Registration 🏆</h1>
         <p class="mb-4 lead">
           Join us on
-          <code class="bg-light px-2 py-1 border rounded">3rd August</code> for
+          <code class="bg-light px-2 py-1 border rounded shadow">3rd August</code> for
           a great Marathon event!
         </p>
-        <a href="registration/register.php" class="btn btn-primary btn-lg">
+        <a href="registration/register.php" class="btn btn-primary btn-lg shadow">
           Register Now
         </a>
       </div>

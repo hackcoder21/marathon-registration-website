@@ -5,7 +5,7 @@
   header("Pragma: no-cache");
 
   if (!isset($_SESSION['form_submitted']) || $_SESSION['form_submitted'] !== true) {
-      header("Location: ../register.php");
+      header("Location: ../index.php");
       exit;
   }
 
@@ -35,11 +35,11 @@
   <!-- Navbar -->
   <?php include '../includes/navbar.php'; ?>
 
-  <main>
+  <main-thankyou>
     <div class="container text-center mt-5">
       <h1 class="text-success">🎉 Thank You for Registering!</h1>
       <p class="lead mt-3">
-        Thank you <code class="bg-light px-2 py-1 border rounded"><?= $name ?></code> 
+        Thank you <code class="bg-light px-2 py-1 border rounded shadow"><?= $name ?></code> 
       </p>
       <p class="lead mt-3">
         We're excited to have you participate in the <strong>Marathon on 3rd August 2025</strong>!
@@ -50,9 +50,9 @@
       <p>
         For any queries, feel free to contact us. Get ready to run! 🏃‍♂️🏃‍♀️
       </p>
-      <a href="../index.html" class="btn btn-primary mt-4">Go Back to Home</a>
+      <a href="../index.php" class="btn btn-primary shadow mt-4">Go Back to Home</a>
     </div>
-  </main>
+  </main-thankyou>
 
   <!-- Footer -->
   <?php include '../includes/footer.php'; ?>
